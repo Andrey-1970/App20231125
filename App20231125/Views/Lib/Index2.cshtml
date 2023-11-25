@@ -1,0 +1,22 @@
+﻿@using App20231125.DataModels
+@model IEnumerable<Shelf>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<h1>Библтотека</h1>
+<ul>
+    @foreach (var shelf in Model)
+    {
+        <li>
+            <div>@shelf.Name</div>
+            <ul>
+                @foreach(var book2Shelf in shelf.Book2Shelfs)
+                {
+                    <li>@book2Shelf.Book.Title</li>
+                }
+            </ul>
+        </li>
+    }
+</ul>
