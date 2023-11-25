@@ -14,8 +14,9 @@ namespace App20231125
             builder.Services.AddDbContext<MyDBContext>(options =>
             {
                 options.UseSqlite("Data source=c:\\temp\\app20231125.db");
+                
             });
-
+            
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

@@ -4,7 +4,7 @@
     {
         public int Id { get; set; }
         public string Title { get; set; }
-        public List<Book2Shelf> Book2Shelfs { get; set; }
+        public virtual List<Book2Shelf> Book2Shelfs { get; set; }
         public int ShelfId { get; set; }
     }
 }

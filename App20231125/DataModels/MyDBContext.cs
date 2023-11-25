@@ -11,6 +11,11 @@ namespace App20231125.DataModels
             modelBuilder.Entity<User>().HasMany<Role>();
             modelBuilder.Entity<Role>().HasMany<User>();
         }
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            base.OnConfiguring(optionsBuilder);
+            optionsBuilder.UseLazyLoadingProxies();
+        }
         public DbSet<Book> Books { get; set; }
         public DbSet<Shelf> Shelfs { get; set; }
         public DbSet<Book2Shelf> Books2Shelfs { get; set; }
