@@ -1,0 +1,28 @@
+﻿@using App20231125.ViewModels
+@model ShelfDetailViewModel
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    // var books = (IEnumerable<Book>)ViewBag["books"];
+}
+<h1>Библиотека</h1>
+<div>@Model.Shelf.Name</div>
+<ul>
+    @foreach (var book2Shelf in Model.Shelf.Book2Shelfs)
+    {
+        <li>
+            @book2Shelf.Book.Title
+            <a asp-controller="Lib" asp-action="RemoveBook" asp-route-id="@book2Shelf.Id">Delete</a>
+        </li>
+    }
+</ul>
+<ul>
+    @foreach (var book in Model.Books)
+    {
+        <li>
+            @book.Title
+            <a asp-controller="Lib" asp-action="AddBook" asp-route-id="@book.Id" asp-route-shelfId="@Model.Shelf.Id">Add</a>
+        </li>
+    }
+</ul>

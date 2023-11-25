@@ -10,13 +10,8 @@
     @foreach (var shelf in Model)
     {
         <li>
-            <div>@shelf.Name</div>
-            <ul>
-                @foreach(var book2Shelf in shelf.Book2Shelfs)
-                {
-                    <li>@book2Shelf.Book.Title</li>
-                }
-            </ul>
+            @shelf.Name
+            <a asp-controller="Lib" asp-action="Details" asp-route-id="@shelf.Id">Детали</a>
         </li>
     }
 </ul>
